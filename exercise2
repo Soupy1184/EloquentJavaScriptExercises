@@ -1,0 +1,47 @@
+let string = "#";
+for (let i = 0; i < 7; i = i + 1){
+    console.log(string);
+    string = string + "#"
+}
+
+let abc = "abc";
+console.log(abc.length);
+
+
+for (let j = 1; j <= 100; j = j + 1){
+    if (j % 3 == 0 && j % 5 == 0){
+        console.log("fizzBuzz");
+    }
+    else if (j % 5 == 0 && j % 3 != 0){
+        console.log("buzz");
+    }
+    else if (j % 5 != 0 && j % 3 == 0){
+        console.log("fizz");
+    }
+    else{
+        console.log(j);
+    }
+}
+
+let height = 8;
+let length = 8;
+let string1 = "";
+let string2 = "";
+for (let k = 0; k < height; k++){
+    if (k % 2 == 0){
+        for (let m = 0; m < (length/2); m++){
+            string1 = string1 + "#";
+            string1 = string1 + " ";
+        }
+        console.log(string1);
+        string1 = "";
+    }
+    else {
+        for (let m = 0; m < (length/2); m++){
+            string2 = string2 + " ";
+            string2 = string2 + "#";
+        }
+        console.log(string2);
+        string2 = "";
+    }
+}

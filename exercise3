@@ -1,0 +1,42 @@
+function min (a, b){
+    if (a < b){
+        return a;
+    }
+    else{
+        return b;
+    }
+}
+
+console.log("Min =", min(5, 7));
+
+function isEven(number){
+    if (number == 0){
+        return "Is Even.";
+    }
+    else if (number == 1){
+        return "Is Odd.";
+    }
+    else{
+        if (number % 2 == 0){
+            return "Is Even.";
+        }
+        else{
+            return "Is Odd."
+        }
+    }
+}
+
+console.log("75", isEven(75));
+console.log("50", isEven(50));
+
+function countB(string, letter){
+    let count = 0;
+    for (let i = 0; i < string.length; i++){
+        if (string[i] == letter){
+            count++;
+        }
+    }
+    return count;
+}
+let letter = "B"
+console.log("Number of B's in string:", countB("BoBBle heads have BoBBing heads", letter));

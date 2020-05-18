@@ -1,0 +1,103 @@
+let start = 1;
+let end = 10;
+let n = 2;
+
+function range(start, end, n){
+    let array = [];
+
+    if (start > end && n >= 0 || start < end && n <= 0){
+        return "Error";
+    }
+    else{
+        if (start < end) {
+            if (n === undefined){
+                n = 1;
+            }
+            let count = 0;
+            for (let i = start; i <= end; i = i + n) {
+                array[count] = i;
+                count++;
+            }
+        }
+        else if (start > end){
+            if (n === undefined){
+                n = -1;
+            }
+            let count = 0;
+            for (let i = start; i >= end; i = i + n) {
+                array[count] = i;
+                count++;
+            }
+        }
+        else{
+            console.log("Start and end are equal");
+        }
+    }
+    return array;
+}
+
+function sumArray(array){
+    let sum = 0;
+    for (let i = 0; i < array.length; i++){
+        sum = sum + array[i];
+    }
+    return sum;
+}
+
+let array1 = range(1, 10);
+console.log(sumArray(array1));
+
+console.log(range(1, 10));
+console.log(range(1, 10, 2));
+console.log(range(5, 2, -1));
+console.log(range(5, 2));
+
+console.log(range(5, 2, 1));
+console.log(range(1, 10, -1));
+
+console.log(sumArray(range(5, 2, -1)));
+
+function reverseArray(array){
+    let newArray = [];
+    for(let i = 0; i < array.length; i++){
+        newArray[array.length - i - 1] = array[i];
+    }
+    return newArray;
+}
+
+function reverseArrayInPlace(array){
+    let count = 0;
+    if ((array.length % 2) == 0){
+        let r = 0;
+        let l = array.length-1;
+        while (count != (array.length / 2)){
+            let hold = array[r];
+            array[r] = array[l];
+            array[l] = hold;
+            r++;
+            l--;
+            count++;
+        }
+    }
+    else {
+        let r = 0;
+        let l = array.length-1;
+        while (r != l){
+            let hold = array[r];
+            array[r] = array[l];
+            array[l] = hold;
+            r++;
+            l--;
+        }
+    }
+    return array;
+}
+
+let array2 = [1, 2, 3, 4, 5];
+let array3 = [6, 7, 8, 9, 10];
+let array4 = [1, 2, 3, 4, 5, 6];
+
+console.log(reverseArray(array2));
+console.log(reverseArrayInPlace(array3));
+console.log(reverseArrayInPlace(array4));
+
